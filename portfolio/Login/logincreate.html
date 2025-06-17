@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Create Account</title>
+  <link rel="stylesheet" href="/portfolio/Login/logincreate.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box" id="loginBox">
+      <h2>Login</h2>
+      <form id="loginForm" method="post">
+        
+      <input type="text" id="loginUser" placeholder="Username">
+      <input type="password" id="loginPass" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <span onclick="toggleForm('signup')">Create one</span></p>
+      </form>
+    </div>
+
+    <div class="form-box hidden" id="signupBox">
+      <h2>Create Account</h2>
+      <form id="signupForm" method="post">
+        
+      <input type="text" id="signupUser" placeholder="Username">
+      <input type="email" id="signupEmail" placeholder="Email">
+      <input type="password" id="signupPass" placeholder="Password">
+      <button onclick="signup()">Sign Up</button>
+      <p>Already have an account? <span onclick="toggleForm('login')">Login</span></p>
+      </form> 
+    </div>
+  </div>
+  <script src="/portfolio/Login/logincreate.js"></script>
+</body>
+</html>
