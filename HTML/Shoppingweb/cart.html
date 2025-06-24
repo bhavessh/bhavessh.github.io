@@ -1,0 +1,45 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - MyStore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>MyStore - Cart</h1>
+    <a href="products.html">⬅ Back to Products</a>
+  </header>
+  <main class="cart-page">
+    <ul id="cart-list"></ul>
+    <h2>Total: ₹<span id="cart-total">0</span></h2>
+  </main>
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const list = document.getElementById("cart-list");
+    const total = document.getElementById("cart-total");
+
+    function renderCart() {
+      list.innerHTML = "";
+      let sum = 0;
+      cart.forEach((item, i) => {
+        const li = document.createElement("li");
+        li.innerHTML = `${item.name} - ₹${item.price} <button onclick="removeItem(${i})" style="margin-left:10px;background:#e53935;color:white;border:none;padding:0.3rem 0.5rem;border-radius:5px;cursor:pointer;">❌</button>`;
+        sum += item.price;
+        list.appendChild(li);
+      });
+      total.textContent = sum;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>
