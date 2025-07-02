@@ -77,3 +77,4 @@ db.employees.find({},{_id:0, name:1, age:1, email:1, position:1, department:1, s
 
 db.employees.find({},{EmpName:"$name"}) // this will not work, as the projection syntax is incorrect
 
+

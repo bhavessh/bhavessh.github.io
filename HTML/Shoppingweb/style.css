@@ -11,6 +11,49 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+.navbar {
+  display: flex;
+  gap: 1.5rem;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar a:hover {
+  text-decoration: underline;
+}
+.hero {
+  background: url('https://via.placeholder.com/1200x400') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.hero button {
+  padding: 0.5rem 1rem;
+  background: #ff9900;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.hero button:hover {
+  background: #e68a00;
+}
+.hero button:active {
+  transform: scale(0.95);
+  background: #cc7a00;
+}
+
 .products, .cart-page {
   padding: 2rem;
 }
@@ -59,4 +102,47 @@ button:active {
 button.delete {
   background-color: #e53935;
   color: white;
+}
+button.delete:hover {
+  background-color: #c62828;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.cart-item img {
+  width: 50px;
+  height: auto;
+}
+.cart-item-details {
+  flex-grow: 1;
+  margin-left: 1rem;
+}
+.cart-item-details h4 {
+  margin: 0;
+}
+.cart-item-details p {
+  margin: 0.5rem 0;
+}
+.cart-item button {
+  background-color: #e53935;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cart-item button:hover {
+  background-color: #c62828;
+}
+.cart-total {
+  text-align: right;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+.cart-total span {
+  font-weight: bold;
 }
